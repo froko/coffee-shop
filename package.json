@@ -2,10 +2,18 @@
   "name": "coffee-shop",
   "version": "1.0.0",
   "description": "Monorepo containing showcase full-stack apps",
-  "keywords": ["coffee shop", "showcase", "monorepo"],
+  "keywords": [
+    "coffee shop",
+    "showcase",
+    "monorepo"
+  ],
   "author": "Patrick Ineichen",
   "license": "MIT",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "nx": "16.5.0"
   }
 }
+

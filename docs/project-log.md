@@ -75,3 +75,39 @@ This documents contains the required shell commands and tweaks to create this mo
 - Stage all files and create an initial commit
   ```sh
   git add . && git commit -m "chore: Initial commit"
+  ```
+### Add Nx mono-repo support
+
+- Add `nx` in workspace mode
+  ```sh
+  pnpm add nx -D -w
+  ```
+
+- Create an empty `nx.json` file
+  ```sh
+  touch nx.json
+  ```
+
+- Modify the `nx.json` file to look like this:
+  ```json
+  {
+    "tasksRunnerOptions": {
+      "default": {
+        "runner": "nx/tasks-runners/default",
+        "options": {
+          "cacheableOperations": [
+            "build",
+            "lint"
+          ],
+          "cacheDirectory": "node_modules/.cache/nx"
+        }
+      }
+    }
+  }
+  ```
+  This will add basic caching support for build and lint tasks.
+
+- Stage and commit all new and modified files
+  ```sh
+  git add . && git commit -m "chore: Add Nx support"
+  ````
